@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slip 13 - HTML5 Page</title>
+</head>
+<body>
+    <header>
+        <h1>Website Header</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#section1">Home</a></li>
+            <li><a href="#section2">About</a></li>
+            <li><a href="#section3">Services</a></li>
+        </ul>
+    </nav>
+    <aside>
+        <p>This is an aside section with additional information.</p>
+    </aside>
+    <section>
+        <h2>Main Content Section</h2>
+        <p>This is the main content area.</p>
+    </section>
+    <footer>
+        <p>&copy; 2024 Your Company</p>
+    </footer>
+</body>
+</html>
+
+
+
+
+
+
+<!-- db.Student.insertMany([
+    { student_id: 1, name: "John", class: "FY", competitions: ["E-Rangoli", "Quiz"] },
+    { student_id: 2, name: "Jane", class: "SY", competitions: ["Quiz"] }
+]);
+
+db.Competition.insertMany([
+    { competition_id: 1, name: "E-Rangoli", participants: ["John"] },
+    { competition_id: 2, name: "Quiz", participants: ["John", "Jane"] }
+]);
+
+db.Competition.aggregate([
+    { $project: { participantCount: { $size: "$participants" } } },
+    { $group: { _id: null, avgParticipants: { $avg: "$participantCount" } } }
+]);
+
+db.Competition.find({ name: "Programming" }, { participants: 1 });
+
+db.Competition.aggregate([
+    { $unwind: "$participants" },
+    { $group: { _id: "$name", winners: { $push: "$participants" } } },
+    { $project: { winners: { $slice: ["$winners", 3] } } }
+]);
+
+db.Student.find({ class: "FY", competitions: "E-Rangoli" });
+
+ -->

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Thumbnails</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container mt-5">
+    <h1 class="text-center mb-4">Image Thumbnails</h1>
+    <div class="row g-3">
+
+      <div class="col-md-4">
+        <div class="card">
+          <img src="https://via.placeholder.com/300" class="card-img-top" alt="Image 1">
+          <div class="card-body">
+            <h5 class="card-title">Image 1</h5>
+            <p class="card-text">This is a thumbnail description for Image 1.</p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="col-md-4">
+        <div class="card">
+          <img src="https://via.placeholder.com/300" class="card-img-top" alt="Image 2">
+          <div class="card-body">
+            <h5 class="card-title">Image 2</h5>
+            <p class="card-text">This is a thumbnail description for Image 2.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-4">
+        <div class="card">
+          <img src="https://via.placeholder.com/300" class="card-img-top" alt="Image 3">
+          <div class="card-body">
+            <h5 class="card-title">Image 3</h5>
+            <p class="card-text">This is a thumbnail description for Image 3.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+<!-- // Employee Collection
+db.Employee.insertMany([
+    { emp_id: 1, name: "Alice", salary: 60000, dept_id: 101 },
+    { emp_id: 2, name: "Bob", salary: 70000, dept_id: 102 },
+    { emp_id: 3, name: "Charlie", salary: 50000, dept_id: 101 }
+]);
+
+// Department Collection
+db.Department.insertMany([
+    { dept_id: 101, name: "Sales", manager: "Alice", employee_count: 2 },
+    { dept_id: 102, name: "Marketing", manager: "Bob", employee_count: 1 }
+]);
+
+
+db.Employee.find({}).sort({ salary: -1 }).limit(1);
+
+db.Department.find({}).sort({ employee_count: -1 }).limit(1);
+
+db.Employee.find({ dept_id: 101 });
+
+db.Employee.aggregate([
+    { $lookup: {
+        from: "Department",
+        localField: "dept_id",
+        foreignField: "dept_id",
+        as: "department_info"
+    }},
+    { $project: { name: 1, salary: 1, "department_info.name": 1 } }
+]);
+ -->

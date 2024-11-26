@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Tiles and Rotation</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+      
+        .image-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); 
+            grid-template-rows: repeat(4, 1fr); 
+            gap: 5px;
+            max-width: 400px;
+            margin: auto;
+            transition: transform 1s ease;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border: 2px solid #2196F3;
+            border-radius: 8px;
+        }
+
+        .rotation-buttons {
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .rotate-clockwise {
+            transform: rotate(90deg);
+        }
+
+        .rotate-anticlockwise {
+            transform: rotate(-90deg);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Image in Tiles and Rotation</h1>
+
+    <div class="image-container" id="imageContainer">
+        <img src="https://via.placeholder.com/300" alt="Tile">
+        <img src="https://via.placeholder.com/300" alt="Tile">
+        <img src="https://via.placeholder.com/300" alt="Tile">
+        <img src="https://via.placeholder.com/300" alt="Tile">
+        <img src="https://via.placeholder.com/300" alt="Tile">
+        <img src="https://via.placeholder.com/300" alt="Tile">
+        <img src="https://via.placeholder.com/300" alt="Tile">
+        <img src="https://via.placeholder.com/300" alt="Tile">
+        <img src="https://via.placeholder.com/300" alt="Tile">
+        <img src="https://via.placeholder.com/300" alt="Tile">
+        <img src="https://via.placeholder.com/300" alt="Tile">
+        <img src="https://via.placeholder.com/300" alt="Tile">
+    </div>
+
+    <div class="rotation-buttons">
+        <button onclick="document.getElementById('imageContainer').classList.toggle('rotate-clockwise')">Rotate Clockwise</button>
+        <button onclick="document.getElementById('imageContainer').classList.toggle('rotate-anticlockwise')">Rotate Anticlockwise</button>
+    </div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- // Creating Vehicle Types
+CREATE (:VehicleType {name: "Two-Wheeler", category: "Motorcycle", features: "Engine Capacity, Fuel Type, Transmission Type"});
+CREATE (:VehicleType {name: "Four-Wheeler", category: "Car", features: "Engine Capacity, Fuel Type, Transmission Type, Safety Features"});
+
+// Creating Customers
+CREATE (:Customer {name: "John Doe", contact_details: "1234567890"});
+CREATE (:Customer {name: "Jane Smith", contact_details: "9876543210"});
+CREATE (:Customer {name: "Ravi Kumar", contact_details: "5555555555"});
+
+// Creating Recommendations and Ratings
+CREATE (:Recommendation {rating: 5, comment: "Great performance!"})-[:RECOMMENDS]->(:VehicleType {name: "Two-Wheeler"});
+CREATE (:Recommendation {rating: 4, comment: "Good but could be improved!"})-[:RECOMMENDS]->(:VehicleType {name: "Four-Wheeler"});
+
+// Creating Purchases
+CREATE (:Purchase {date: "2024-01-01", price: 150000})-[:BUYS]->(:VehicleType {name: "Two-Wheeler"});
+CREATE (:Purchase {date: "2024-02-01", price: 500000})-[:BUYS]->(:VehicleType {name: "Four-Wheeler"});
+
+
+// Relationships between Customer and Vehicle Type
+MATCH (c:Customer {name: "John Doe"}), (v:VehicleType {name: "Two-Wheeler"})
+CREATE (c)-[:BUYS]->(v);
+
+MATCH (c:Customer {name: "Jane Smith"}), (v:VehicleType {name: "Four-Wheeler"})
+CREATE (c)-[:BUYS]->(v);
+
+MATCH (c:Customer {name: "Ravi Kumar"}), (v:VehicleType {name: "Two-Wheeler"})
+CREATE (c)-[:BUYS]->(v);
+
+// Relationships for Recommendations
+MATCH (c:Customer {name: "John Doe"}), (v:VehicleType {name: "Two-Wheeler"})
+CREATE (c)-[:RECOMMENDS {rating: 5, comment: "Great performance!"}]->(v);
+
+MATCH (c:Customer {name: "Jane Smith"}), (v:VehicleType {name: "Four-Wheeler"})
+CREATE (c)-[:RECOMMENDS {rating: 4, comment: "Good but could be improved!"}]->(v);
+
+// Relationships for Ratings
+MATCH (c:Customer {name: "Ravi Kumar"}), (v:VehicleType {name: "Two-Wheeler"})
+CREATE (c)-[:RATES {rating: 4}]->(v);
+
+
+MATCH (v:VehicleType {name: "Four-Wheeler"})
+RETURN v.features;
+
+MATCH (c:Customer)-[:BUYS]->(v:VehicleType {name: "Two-Wheeler"})
+RETURN c.name;
+
+MATCH (c:Customer)-[:BUYS]->(v:VehicleType)
+WITH c, COUNT(v) AS vehicleCount
+WHERE vehicleCount > 1
+RETURN c.name;
+
+MATCH (c:Customer)-[:RECOMMENDS]->(v:VehicleType)
+RETURN v.name, COUNT(c) AS recommendationCount
+ORDER BY recommendationCount DESC
+LIMIT 1;
+ -->

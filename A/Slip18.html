@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D Transformation on Image</title>
+    <style>
+        /* Center the image in the viewport */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .image-container {
+            width: 300px;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid #000;
+            background-color: #fff;
+            transform: rotate(45deg) scale(1.2) translateX(50px) translateY(30px);
+            transition: transform 1s ease;
+        }
+
+        /* Apply transformation when hovered */
+        .image-container:hover {
+            transform: rotate(90deg) scale(1.5) translateX(100px) translateY(50px);
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        <img src="https://via.placeholder.com/150" alt="Image">
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+<!-- // Create Doctors
+CREATE (:Doctor {name: "Dr. Asha", specialization: "Pediatrician"});
+CREATE (:Doctor {name: "Dr. Mohan", specialization: "Orthopedic"});
+CREATE (:Doctor {name: "Dr. Priya", specialization: "Cancer Specialist"});
+
+// Create Hospitals
+CREATE (:Hospital {name: "Seren Medows Hospital", location: "Pune"});
+CREATE (:Hospital {name: "Care Hospital", location: "Pune"});
+
+// Create Clinics
+CREATE (:Clinic {name: "Asha's Pediatric Clinic", location: "Pune"});
+CREATE (:Clinic {name: "Mohan's Orthopedic Clinic", location: "Pune"});
+
+// Create Patients
+CREATE (:Patient {name: "John Doe", city: "Pune"});
+CREATE (:Patient {name: "Ravi", city: "Pune"});
+
+// Create Reviews & Recommendations
+CREATE (:Review {rating: 5, comment: "Excellent pediatrician!"})-[:REVIEWS]->(:Doctor {name: "Dr. Asha"});
+CREATE (:Review {rating: 4, comment: "Good orthopedic doctor."})-[:REVIEWS]->(:Doctor {name: "Dr. Mohan"});
+CREATE (:Patient {name: "Ravi"})-[:RECOMMENDS]->(:Doctor {name: "Dr. Asha"});
+
+// Create Relationships
+MATCH (d:Doctor {name: "Dr. Asha"}), (h:Hospital {name: "Seren Medows Hospital"})
+CREATE (d)-[:VISITS]->(h);
+
+MATCH (d:Doctor {name: "Dr. Mohan"}), (h:Hospital {name: "Care Hospital"})
+CREATE (d)-[:VISITS]->(h);
+
+MATCH (d:Doctor {name: "Dr. Priya"}), (c:Clinic {name: "Priya's Cancer Clinic"})
+CREATE (d)-[:OWNS]->(c);
+
+
+MATCH (d:Doctor)-[:VISITS]->(h:Hospital)
+WHERE d.specialization = "Orthopedic" AND h.location = "Pune"
+RETURN d.name, d.specialization;
+
+MATCH (d:Doctor)
+WHERE d.specialization = "Pediatrician"
+RETURN d.name, d.specialization;
+
+MATCH (p:Patient)-[:RECOMMENDS]->(d:Doctor)
+WHERE d.specialization = "Pediatrician" AND (d)-[:VISITS]->(:Hospital {name: "Seren Medows Hospital"})
+RETURN d.name, COUNT(p) AS recommendationCount
+ORDER BY recommendationCount DESC
+LIMIT 1;
+
+MATCH (d:Doctor)-[:VISITS]->(h:Hospital)
+WITH d, COUNT(h) AS hospitalCount
+WHERE hospitalCount > 2
+RETURN d.name, hospitalCount;
+
+  -->

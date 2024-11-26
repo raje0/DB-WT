@@ -1,0 +1,155 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Progress Bar</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+
+    
+    #container {
+      width: 100%;
+      max-width: 500px;
+      height: 30px;
+      border: 2px solid #000;
+      border-radius: 5px;
+      margin: 20px auto;
+      overflow: hidden;
+      position: relative;
+    }
+
+    
+    #progress {
+      width: 0;
+      height: 100%;
+      background-color: green;
+      transition: width 1s linear;
+    }
+
+    
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+
+    .start-download #progress {
+      animation: fill-progress 10s linear forwards;
+    }
+
+
+    @keyframes fill-progress {
+      0% {
+        width: 0%;
+      }
+      100% {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Simulated Download Progress Bar</h1>
+  <div id="container">
+    <div id="progress"></div>
+  </div>
+  <button onclick="document.body.classList.add('start-download')">Start Download</button>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- // Creating Plant Nodes
+CREATE (:Plant {name: "Rose", type: "Flowering", category: "Flowering", price: 20, quantity: 300});
+CREATE (:Plant {name: "Creeper Ivy", type: "Creeper", category: "Flowering", price: 15, quantity: 200});
+CREATE (:Plant {name: "Tulip", type: "Flowering", category: "Flowering", price: 25, quantity: 150});
+CREATE (:Plant {name: "Fern", type: "Non-Flowering", category: "Creeper", price: 18, quantity: 500});
+
+// Creating Fertilizer Nodes
+CREATE (:Fertilizer {name: "Organic Fertilizer", brand: "EcoGrow", quantity: 100, price: 10});
+CREATE (:Fertilizer {name: "SuperBloom", brand: "GreenThumb", quantity: 50, price: 12});
+
+// Creating Product Nodes
+CREATE (:Product {name: "Plant Pots", category: "Gardening", price: 5});
+CREATE (:Product {name: "Watering Can", category: "Gardening", price: 8});
+
+// Creating Customer Nodes
+CREATE (:Customer {name: "John Doe", contact: "123456789", location: "Pune"});
+CREATE (:Customer {name: "Jane Smith", contact: "987654321", location: "Mumbai"});
+
+// Creating Supplier Nodes
+CREATE (:Supplier {name: "PlantCorp", company: "Green Supply", location: "Delhi"});
+CREATE (:Supplier {name: "FertileGround", company: "AgriProducts", location: "Bangalore"});
+
+// Creating App Node
+CREATE (:App {name: "NurseryApp", version: "1.2", rating: 4.5});
+
+// Relationships between Customer and Plants
+MATCH (c:Customer {name: "John Doe"}), (p:Plant {name: "Rose"})
+CREATE (c)-[:PURCHASED]->(p);
+
+// Relationships between Customer and Products
+MATCH (c:Customer {name: "Jane Smith"}), (p:Product {name: "Plant Pots"})
+CREATE (c)-[:PURCHASED]->(p);
+
+// Relationships between Customer and App
+MATCH (c:Customer {name: "John Doe"}), (a:App {name: "NurseryApp"})
+CREATE (c)-[:RECOMMENDS]->(a);
+
+// Relationships between Supplier and Plants
+MATCH (s:Supplier {name: "PlantCorp"}), (p:Plant {name: "Rose"})
+CREATE (s)-[:SUPPLIES]->(p);
+
+// Relationships between Nursery and Products
+MATCH (n:Nursery {name: "Green Valley Nursery"}), (p:Product {name: "Watering Can"})
+CREATE (n)-[:CONTAINS]->(p);
+
+// Relationships between Customer and Reviews
+MATCH (c:Customer {name: "Jane Smith"}), (p:Plant {name: "Creeper Ivy"})
+CREATE (c)-[:REVIEWS {rating: 4, comment: "Great creeper plant!"}]->(p);
+
+MATCH (p:Plant)
+RETURN DISTINCT p.type;
+
+MATCH (p:Plant)
+WHERE p.category = "Flowering" AND p.quantity > 100
+RETURN p.name, p.quantity
+ORDER BY p.quantity DESC;
+
+MATCH (p:Plant)
+WHERE p.quantity > 500
+RETURN p.name, p.quantity
+ORDER BY p.quantity DESC;
+
+MATCH (s:Supplier)-[:SUPPLIES]->(p:Plant)
+WHERE p.category = "Creeper"
+RETURN s.name, COUNT(p) AS supplyCount
+ORDER BY supplyCount DESC; -->
+

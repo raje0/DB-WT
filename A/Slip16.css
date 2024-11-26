@@ -1,0 +1,38 @@
+body {
+    background-color: #1a1a44;
+    color: #333;
+}
+.contact-container {
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    overflow: hidden;
+}
+.contact-left {
+    background-color: #ffa500;
+    padding: 20px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 35%;
+}
+.contact-left i {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+.contact-right {
+    padding: 20px;
+    width: 65%;
+}
+.btn-submit {
+    background-color: #1a1a44;
+    color: #fff;
+    border: none;
+    font-weight: bold;
+}

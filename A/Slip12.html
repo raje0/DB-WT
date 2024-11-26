@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slip 12 - Registration Form</title>
+</head>
+<body>
+    <h1>Customer Registration</h1>
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        <label for="contact">Contact No:</label>
+        <input type="tel" id="contact" name="contact"><br><br>
+        <label>Gender:</label>
+        <input type="radio" name="gender" value="Male"> Male
+        <input type="radio" name="gender" value="Female"> Female<br><br>
+        <label for="days">Preferred Days:</label>
+        <select id="days" name="days">
+            <option>Weekdays</option>
+            <option>Weekends</option>
+        </select><br><br>
+        <label for="item">Favorite Item:</label>
+        <select id="item" name="item">
+            <option>Electronics</option>
+            <option>Clothing</option>
+        </select><br><br>
+        <label for="suggestions">Suggestions:</label>
+        <textarea id="suggestions" name="suggestions"></textarea><br><br>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- db.Movies.insertMany([
+    { movie_id: 1, name: "Movie A", budget: 100000000, actors: ["Akshay", "Rani"], producers: ["Producer1", "Producer2"] },
+    { movie_id: 2, name: "Movie B", budget: 80000000, actors: ["Salman", "Katrina"], producers: ["Producer3"] },
+    { movie_id: 3, name: "Movie C", budget: 120000000, actors: ["Akshay", "Salman"], producers: ["Producer1", "Producer3"] },
+    { movie_id: 4, name: "Movie D", budget: 50000000, actors: ["Ranveer", "Deepika"], producers: ["Producer2"] },
+    { movie_id: 5, name: "Movie E", budget: 90000000, actors: ["Rani", "Deepika"], producers: ["Producer1", "Producer2"] }
+]);
+
+db.Actors.insertMany([
+    { actor_id: 1, name: "Akshay", movies: ["Movie A", "Movie C"] },
+    { actor_id: 2, name: "Rani", movies: ["Movie A", "Movie E"] },
+    { actor_id: 3, name: "Salman", movies: ["Movie B", "Movie C"] },
+    { actor_id: 4, name: "Ranveer", movies: ["Movie D"] },
+    { actor_id: 5, name: "Deepika", movies: ["Movie D", "Movie E"] }
+]);
+
+db.Producers.insertMany([
+    { producer_id: 1, name: "Producer1", movies: [{ name: "Movie A", year: 2022 }, { name: "Movie C", year: 2022 }, { name: "Movie E", year: 2023 }] },
+    { producer_id: 2, name: "Producer2", movies: [{ name: "Movie A", year: 2022 }, { name: "Movie D", year: 2022 }, { name: "Movie E", year: 2023 }] },
+    { producer_id: 3, name: "Producer3", movies: [{ name: "Movie B", year: 2022 }, { name: "Movie C", year: 2022 }] }
+]);
+
+
+
+db.Movie.find().sort({ budget: -1 }).limit(1);
+
+db.Producers.aggregate([
+    { $unwind: "$movies" },
+    { $group: { _id: { producer_id: "$producer_id", year: "$movies.year" }, movieCount: { $sum: 1 }, producer_name: { $first: "$name" } } },
+    { $match: { movieCount: { $gt: 1 } } },
+    { $project: { producer_id: "$_id.producer_id", producer_name: 1, year: "$_id.year", movieCount: 1 } }
+]);
+
+db.Movies.aggregate([
+    { $match: { actors: "Akshay" } },
+    { $unwind: "$actors" },
+    { $match: { actors: { $ne: "Akshay" } } },
+    { $group: { _id: "$actors" } },
+    { $project: { actor_name: "$_id", _id: 0 } }
+]);
+
+db.Movies.aggregate([
+    { $match: { $expr: { $gte: [{ $size: "$producers" }, 2] } } },
+    { $project: { name: 1, producers: 1, _id: 0 } }
+]);
+ -->

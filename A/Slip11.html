@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slip 11 - HTML Frames</title>
+</head>
+<frameset rows="20%, 80%">
+    <frame src="header.html" name="headerFrame">
+    <frameset cols="30%, 70%">
+        <frame src="menu.html" name="menuFrame">
+        <frame src="content.html" name="contentFrame">
+    </frameset>
+</frameset>
+</html>
+
+
+
+
+
+
+
+
+<!-- db.Order.insertMany([
+    { order_id: 1, customer_name: "Mr. Rajiv", product_name: "Phone", status: "Processed", value: 25000 },
+    { order_id: 2, customer_name: "Mr. Rajiv", product_name: "Laptop", status: "Pending", value: 50000 }
+]);
+
+db.Invoice.insertMany([
+    { invoice_id: 1, order_id: 1, details: "Phone Invoice" }
+]);
+
+
+db.Order.distinct("product_name");
+
+db.Order.find({ value: { $gt: 20000 } });
+
+db.Order.find({ status: "Pending" });
+
+db.Order.aggregate([
+    { $match: { customer_name: "Mr. Rajiv" } },
+    { $lookup: { from: "Invoice", localField: "order_id", foreignField: "order_id", as: "invoiceDetails" } }
+]); -->

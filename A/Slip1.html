@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="slip1.css">
+  <title>Project Form</title>
+</head>
+<body>
+  <h1>Project Management</h1>
+  <div class="form-container">
+    <form>
+      <div class="form-row">
+        <label for="project-name">Project Name</label>
+        <input type="text" id="project-name" name="projectName" placeholder="project name" required />
+      </div>
+      
+      <div class="form-row">
+        <label for="assigned-to">Assigned to</label>
+        <select id="assigned-to" name="assignedTo" required>
+          <option value="" disabled selected>Select a person</option>
+          <option value="merry">Er Merry Petison</option>
+          <option value="merry">Sohan</option>
+          <option value="merry">Suyash</option>
+          <option value="merry">Makarand</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <label for="start-date">Start Date</label>
+        <input type="date" id="start-date" name="startDate" required />
+      </div>
+
+      <div class="form-row">
+        <label for="end-date">End Date</label>
+        <input type="date" id="end-date" name="endDate" required />
+      </div>
+
+      <div class="form-row">
+        <label>Priority</label>
+        <div class="priority-options">
+          <label><input type="radio" name="priority" value="high" required /> High</label>
+          <label><input type="radio" name="priority" value="average" /> Average</label>
+          <label><input type="radio" name="priority" value="low" /> Low</label>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label for="description">Description</label>
+        <textarea id="description" name="description" rows="4" placeholder="Description"></textarea>
+      </div>
+
+      <div class="form-row buttons">
+        <button type="submit" class="submit-btn">Submit</button>
+        <button type="reset" class="clear-btn">Clear</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
+
+
+
+<!-- db.Owner.insertMany([
+    { owner_id: 1, name: "Mr. Patil", contact: "9876543210" },
+    { owner_id: 2, name: "Ms. Sharma", contact: "9123456789" }
+]);
+
+db.Property.insertMany([
+    { property_id: 101, area: "Nashik", price: 95000, owner_id: 1 },
+    { property_id: 102, area: "Pune", price: 125000, owner_id: 2 }
+]);
+
+
+db.Property.aggregate([{ $group: { _id: "$area", properties: { $push: "$$ROOT" } } }]);
+
+db.Property.find({ owner_id: 1, price: { $gte: 90000 } });
+
+db.Owner.aggregate([
+    { $lookup: { from: "Property", localField: "owner_id", foreignField: "owner_id", as: "properties" } },
+    { $match: { "properties.area": "Nashik" } }
+]);
+
+
+db.Property.find({ price: { $lt: 100000 } });
+ -->

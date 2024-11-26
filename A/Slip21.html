@@ -1,0 +1,223 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+    <style>
+    
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            background-color: white;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            width: 400px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        
+        label {
+            font-size: 16px;
+            color: #555;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        
+        input[type="text"], input[type="email"], input[type="date"], select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        
+        input:required {
+            background-color: #ffe6e6;
+            border: 2px solid red;
+        }
+
+        
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+
+        .message {
+            padding: 15px;
+            text-align: center;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h1>Student Registration</h1>
+        
+        <div class="message success" style="display: none;">
+            Registration Successful!
+        </div>
+        <div class="message error" style="display: none;">
+            Please fill in all required fields.
+        </div>
+        
+        <form id="registrationForm">
+            <label for="name">Full Name (Required)</label>
+            <input type="text" id="name" name="name" required placeholder="Enter your full name">
+
+            <label for="email">Email (Required)</label>
+            <input type="email" id="email" name="email" required placeholder="Enter your email">
+
+            <label for="dob">Date of Birth (Required)</label>
+            <input type="date" id="dob" name="dob" required>
+
+            <label for="gender">Gender</label>
+            <select id="gender" name="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- // Creating Brand Nodes
+CREATE (:Brand {name: "Dr. Reddy"});
+CREATE (:Brand {name: "Cipla"});
+CREATE (:Brand {name: "SunPharma"});
+
+// Creating Medicine Nodes
+CREATE (:Medicine {name: "Paracetamol", use_percentage: 95, type: "Tablet"});
+CREATE (:Medicine {name: "Amoxicillin", use_percentage: 75, type: "Syrup"});
+CREATE (:Medicine {name: "Aspirin", use_percentage: 60, type: "Tablet"});
+CREATE (:Medicine {name: "Ibuprofen", use_percentage: 40, type: "Powder"});
+
+// Creating State Nodes
+CREATE (:State {name: "Rajasthan"});
+CREATE (:State {name: "Gujarat"});
+CREATE (:State {name: "Maharashtra"});
+
+// Creating MedicineProduct Nodes
+CREATE (:MedicineProduct {product_type: "Tablet"});
+CREATE (:MedicineProduct {product_type: "Syrup"});
+CREATE (:MedicineProduct {product_type: "Powder"});
+
+
+// Relationship: Brand manufactures Medicine
+MATCH (b:Brand {name: "Dr. Reddy"}), (m:Medicine {name: "Paracetamol"})
+CREATE (b)-[:MANUFACTURES]->(m);
+
+MATCH (b:Brand {name: "Cipla"}), (m:Medicine {name: "Amoxicillin"})
+CREATE (b)-[:MANUFACTURES]->(m);
+
+MATCH (b:Brand {name: "SunPharma"}), (m:Medicine {name: "Aspirin"})
+CREATE (b)-[:MANUFACTURES]->(m);
+
+// Relationship: Medicine is used in State
+MATCH (m:Medicine {name: "Paracetamol"}), (s:State {name: "Rajasthan"})
+CREATE (m)-[:USED_IN]->(s);
+
+MATCH (m:Medicine {name: "Amoxicillin"}), (s:State {name: "Gujarat"})
+CREATE (m)-[:USED_IN]->(s);
+
+MATCH (m:Medicine {name: "Aspirin"}), (s:State {name: "Maharashtra"})
+CREATE (m)-[:USED_IN]->(s);
+
+// Relationship: Medicine is a type of MedicineProduct
+MATCH (m:Medicine {name: "Paracetamol"}), (mp:MedicineProduct {product_type: "Tablet"})
+CREATE (m)-[:IS_A]->(mp);
+
+MATCH (m:Medicine {name: "Amoxicillin"}), (mp:MedicineProduct {product_type: "Syrup"})
+CREATE (m)-[:IS_A]->(mp);
+
+MATCH (m:Medicine {name: "Aspirin"}), (mp:MedicineProduct {product_type: "Tablet"})
+CREATE (m)-[:IS_A]->(mp);
+
+MATCH (m:Medicine {name: "Ibuprofen"}), (mp:MedicineProduct {product_type: "Powder"})
+CREATE (m)-[:IS_A]->(mp);
+
+
+MATCH (m:Medicine)
+RETURN m.name;
+
+MATCH (m:Medicine)-[:USED_IN]->(s:State {name: "Rajasthan"})
+WHERE m.use_percentage >= 90
+RETURN m.name, m.use_percentage;
+
+MATCH (m:Medicine)-[:USED_IN]->(s:State {name: "Gujarat"})-[:IS_A]->(mp:MedicineProduct {product_type: "Tablet"})
+WHERE m.use_percentage >= 90
+RETURN m.name, m.use_percentage;
+
+MATCH (m:Medicine)-[:IS_A]->(mp:MedicineProduct {product_type: "Powder"})
+RETURN m.name;
+
+ -->

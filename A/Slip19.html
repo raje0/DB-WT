@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Progress Bar</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+
+    
+    #container {
+      width: 100%;
+      max-width: 500px;
+      height: 30px;
+      border: 1px solid #000;
+      margin: 20px auto;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #progress {
+      width: 0;
+      height: 100%;
+      background: red;
+      animation: progress-animation 10s linear forwards, color-animation 10s linear infinite;
+    }
+
+    @keyframes progress-animation {
+      0% {
+        width: 0;
+      }
+      100% {
+        width: 100%;
+      }
+    }
+
+
+    @keyframes color-animation {
+      0% {
+        background-color: red;
+      }
+      33% {
+        background-color: blue;
+      }
+      66% {
+        background-color: green;
+      }
+      100% {
+        background-color: red;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Progress Bar</h1>
+  <p>The progress bar below will fill automatically:</p>
+
+  <div id="container">
+    <div id="progress"></div>
+  </div>
+</body>
+</html>
+
+
+
+
+
+<!-- // Create authors
+CREATE (author1:Author {name: "John Doe"});
+CREATE (author2:Author {name: "Alice Smith"});
+CREATE (author3:Author {name: "Bob Johnson"});
+
+// Create books
+CREATE (book1:Book {title: "Comics", genre: "Comics"});
+CREATE (book2:Book {title: "Fiction", genre: "Fiction"});
+CREATE (book3:Book {title: "Science", genre: "Non-Fiction"});
+
+// Create publishers
+CREATE (publisher1:Publisher {name: "Sage"});
+CREATE (publisher2:Publisher {name: "O'Reilly"});
+
+// Create readers
+CREATE (reader1:Reader {name: "Charlie", rating: 4});
+CREATE (reader2:Reader {name: "David", rating: 5});
+
+// Create relationships
+MERGE (author1)-[:WROTE]->(book1);
+MERGE (author2)-[:WROTE]->(book2);
+MERGE (author3)-[:WROTE]->(book3);
+MERGE (publisher1)-[:PUBLISHED]->(book1);
+MERGE (publisher1)-[:PUBLISHED]->(book2);
+MERGE (publisher2)-[:PUBLISHED]->(book3);
+MERGE (reader1)-[:RATED]->(book1);
+MERGE (reader2)-[:RATED]->(book3);
+
+MATCH (l:Laptop) RETURN l.name, l.characteristics;
+
+MATCH (c:Customer)-[:BUYS]->(l:Laptop {brand: "DELL"}) RETURN c.name;
+
+MATCH (c:Customer)-[:BUYS {date: "26/01/2023"}]->(l:Laptop) RETURN c.name;
+
+MATCH (l:Laptop)<-[:RECOMMENDS]-(c:Customer) RETURN l.name, COUNT(c) AS recommendations ORDER BY recommendations DESC LIMIT 1; -->

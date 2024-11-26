@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slip 6 Web Page</title>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Logo" style="width: 100px;">
+        <h1>Welcome to Our Website</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#section1">Home</a></li>
+            <li><a href="#section2">About</a></li>
+            <li><a href="#section3">Contact</a></li>
+        </ul>
+    </nav>
+    <section>
+        <h2>Informative Text</h2>
+        <p>This is a sample web page containing various elements like images, text, and links.</p>
+    </section>
+    <footer>
+        <p>&copy; 2024 Our Company</p>
+    </footer>
+</body>
+</html>
+
+
+<!-- db.Policy.insertMany([
+    { policy_id: 1, name: "Komal Jeevan", type: "Life", premium: 5000 },
+    { policy_id: 2, name: "Jeevan Anand", type: "Life", premium: 7000 }
+]);
+
+db.Customer.insertMany([
+    { customer_id: 101, name: "Mr. Sharma", policy_id: 1 },
+    { customer_id: 102, name: "Ms. Gupta", policy_id: 2 }
+]);
+
+db.Customer.aggregate([
+    { $lookup: { from: "Policy", localField: "policy_id", foreignField: "policy_id", as: "policyDetails" } },
+    { $match: { "policyDetails.name": "Komal Jeevan" } }
+]);
+
+db.Policy.aggregate([{ $group: { _id: null, avgPremium: { $avg: "$premium" } } }]);
+
+db.Policy.updateMany({ type: "Monthly" }, { $mul: { premium: 1.05 } });
+
+db.Customer.aggregate([
+    { $lookup: { from: "Policy", localField: "policy_id", foreignField: "policy_id", as: "policyDetails" } },
+    { $match: { "policyDetails.type": "half-yearly" } },
+    { $count: "count" }
+]);
+
+ -->

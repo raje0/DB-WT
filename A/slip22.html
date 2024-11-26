@@ -1,0 +1,210 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Text Effects</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+    
+        .text-container {
+            text-align: center;
+            color: #333;
+        }
+
+        .threeD-text {
+            font-size: 70px;
+            font-weight: bold;
+            text-transform: uppercase;
+            position: relative;
+            display: inline-block;
+            color: #2196F3;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2), 0px 0px 25px rgba(0, 0, 255, 0.4);
+            transform: perspective(500px) rotateX(20deg) rotateY(10deg);
+            word-wrap: break-word;  
+            overflow: hidden;      
+            padding: 20px;
+        }
+
+        .threeD-text:before {
+            content: "3D Text";
+            position: absolute;
+            top: -2px;
+            left: 2px;
+            color: rgba(0, 0, 0, 0.2);
+            z-index: -1;
+        }
+
+    
+        .overflow-text {
+            width: 300px;
+            height: 100px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis; 
+            font-size: 20px;
+            border: 2px solid #2196F3;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="text-container">
+    
+        <div class="threeD-text">
+            3D Text with Effects
+        </div>
+
+        <br><br>
+
+        <div class="overflow-text">
+            This is an example of a long text that will overflow if it exceeds the container width.
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- // Create Car Models
+CREATE (:CarModel {name: "Honda City", type: "Sedan"});
+CREATE (:CarModel {name: "Skoda", type: "SUV"});
+CREATE (:CarModel {name: "Creta", type: "SUV"});
+CREATE (:CarModel {name: "Swift", type: "Hatchback"});
+CREATE (:CarModel {name: "Ertiga", type: "MPV"});
+
+// Create Showroom
+CREATE (:Showroom {name: "XYZ Car Showroom", location: "Pune"});
+
+// Create Sections
+CREATE (:Section {name: "Honda City Section"});
+CREATE (:Section {name: "SUV Section"});
+CREATE (:Section {name: "Hatchback Section"});
+
+// Create Sales Staff
+CREATE (:SalesStaff {name: "Mr. Narayan", employee_id: "S123"});
+CREATE (:SalesStaff {name: "Mr. Singh", employee_id: "S124"});
+
+// Create Customers
+CREATE (:Customer {name: "John Doe", contact: "1234567890"});
+CREATE (:Customer {name: "Jane Smith", contact: "0987654321"});
+
+// Create Enquiries
+CREATE (:Enquiry {date: "2024-11-01", car_model_name: "Honda City"});
+CREATE (:Enquiry {date: "2024-11-02", car_model_name: "Creta"});
+
+// Create Purchases
+CREATE (:Purchase {date: "2024-11-03", amount: 1200000, car_model_name: "Honda City"});
+CREATE (:Purchase {date: "2024-11-05", amount: 800000, car_model_name: "Swift"});
+
+
+// Relationships between Showroom and Sections
+MATCH (s:Showroom {name: "XYZ Car Showroom"}), (sec:Section {name: "Honda City Section"})
+CREATE (s)-[:HAS_SECTION]->(sec);
+
+MATCH (s:Showroom {name: "XYZ Car Showroom"}), (sec:Section {name: "SUV Section"})
+CREATE (s)-[:HAS_SECTION]->(sec);
+
+// Relationships between Sales Staff and Sections
+MATCH (sec:Section {name: "Honda City Section"}), (staff:SalesStaff {name: "Mr. Narayan"})
+CREATE (staff)-[:HANDLES]->(sec);
+
+MATCH (sec:Section {name: "SUV Section"}), (staff:SalesStaff {name: "Mr. Narayan"})
+CREATE (staff)-[:HANDLES]->(sec);
+
+// Relationships between Customer and Enquiries
+MATCH (c:Customer {name: "John Doe"}), (car:CarModel {name: "Honda City"})
+CREATE (c)-[:ENQUIRED]->(car);
+
+MATCH (c:Customer {name: "Jane Smith"}), (car:CarModel {name: "Creta"})
+CREATE (c)-[:ENQUIRED]->(car);
+
+// Relationships between Customer and Purchases
+MATCH (c:Customer {name: "John Doe"}), (car:CarModel {name: "Honda City"})
+CREATE (c)-[:PURCHASED]->(car);
+
+MATCH (c:Customer {name: "Jane Smith"}), (car:CarModel {name: "Swift"})
+CREATE (c)-[:PURCHASED]->(car);
+
+
+MATCH (c:CarModel)
+RETURN DISTINCT c.type;
+
+MATCH (staff:SalesStaff {name: "Mr. Narayan"})-[:HANDLES]->(sec:Section)
+RETURN sec.name;
+
+MATCH (c:Customer)-[:ENQUIRED]->(car:CarModel)
+WHERE NOT (c)-[:PURCHASED]->(car)
+RETURN DISTINCT c.name;
+
+MATCH (c:Customer)-[:PURCHASED]->(car:CarModel)
+RETURN car.name, COUNT(c) AS purchaseCount
+ORDER BY purchaseCount DESC
+LIMIT 1;
+
+
+
+ -->

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Form</title>
+    <link rel="stylesheet" href="slip25.css">
+</head>
+<body>
+    <h2>ENTRY FORM</h2>
+    <div>
+        <form>
+            <div class="form-group">
+                <label for="name">Enter your Name: </label>
+                <input type="text" id="name">
+            </div>
+            <div class="form-group">
+                <label for="age">Enter your Age: </label>
+                <input type="number" id="age">
+            </div>
+            <div class="form-group">
+                <label for="address">Enter your Address: </label>
+                <textarea id="address"></textarea>
+            </div>
+            <div class="form-group">
+                <label>Sex: </label>
+                <label for="male"><input type="radio" id="male" name="sex" value="male"> Male</label>
+                <label for="female"><input type="radio" id="female" name="sex" value="female"> Female</label>
+            </div>
+            <div class="form-group">
+                <label for="nationality">Nationality: </label>
+                <select id="nationality" name="assignedTo" required>
+                    <option value="" disabled selected>Select a Country</option>
+                    <option value="india">India</option>
+                    <option value="usa">USA</option>
+                    <option value="china">China</option>
+                    <option value="sri-lanka">Sri Lanka</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Language Known: </label>
+               
+                <div class="checkbox-options">
+                    <h6>(Can select more than one)</h6>
+                    <input type="checkbox" name="language" value="c"> C <br>
+                    <input type="checkbox" name="language" value="cpp"> C++ <br>
+                    <input type="checkbox" name="language" value="vb"> VB <br>
+                    <input type="checkbox" name="language" value="java"> JAVA <br>
+                    <input type="checkbox" name="language" value="asp"> ASP <br>
+                    <input type="checkbox" name="language" value="others"> OTHERS <br>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="password">Enter your Password:</label>
+                <input type="password" id="password">
+            </div>
+            <div class="form-buttons">
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- // Create departments
+CREATE (physics:Department {name: "Physics"});
+CREATE (geography:Department {name: "Geography"});
+CREATE (math:Department {name: "Mathematics"});
+CREATE (computer:Department {name: "Computer"});
+
+// Create courses
+CREATE (course1:Course {name: "Quantum Mechanics"});
+CREATE (course2:Course {name: "Geospatial Analysis"});
+CREATE (course3:Course {name: "Linear Algebra"});
+CREATE (course4:Course {name: "Algorithms"});
+CREATE (course5:Course {name: "Machine Learning"});
+
+// Create relationships
+MERGE (physics)-[:OFFERS]->(course1);
+MERGE (geography)-[:OFFERS]->(course2);
+MERGE (math)-[:OFFERS]->(course3);
+MERGE (computer)-[:OFFERS]->(course4);
+MERGE (computer)-[:OFFERS]->(course5);
+MERGE (math)-[:OFFERS]->(course5);
+
+// Create recommendations
+CREATE (person1:Person {name: "Alice"})-[:RECOMMENDS]->(course2);
+CREATE (person2:Person {name: "Bob"})-[:RECOMMENDS]->(course2);
+CREATE (person3:Person {name: "Carol"})-[:RECOMMENDS]->(course5);
+
+MATCH (d:Department) RETURN d.name;
+
+MATCH (:Department {name: "Physics"})-[:OFFERS]->(c:Course) RETURN c.name;
+
+MATCH (:Department {name: "Geography"})-[:OFFERS]->(c:Course)<-[:RECOMMENDS]-(p) RETURN c.name, COUNT(p) AS recommendations ORDER BY recommendations DESC LIMIT 1;
+
+MATCH (:Department {name: "Mathematics"})-[:OFFERS]->(c:Course)<-[:OFFERS]-(:Department {name: "Computer"}) RETURN c.name; -->

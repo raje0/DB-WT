@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slip 7 - 3D Text</title>
+    <style>
+        h1 {
+            font-size: 50px;
+            font-weight: bold;
+            color: #555;
+            text-shadow: 3px 3px 5px #999;
+            transition: transform 0.3s;
+        }
+        h1:hover {
+            transform: perspective(500px) rotateX(10deg);
+        }
+    </style>
+</head>
+<body>
+    <h1>Hover for 3D Effect</h1>
+</body>
+</html>
+
+
+<!-- db.Customer.insertMany([
+    { customer_id: 1, first_name: "Sam", last_name: "Patel", account_type: "Saving", branch: "Pune", opened_date: "2020-01-01" },
+    { customer_id: 2, first_name: "Sara", last_name: "Shah", account_type: "Current", branch: "Mumbai", opened_date: "2021-05-10" }
+]);
+
+db.Transaction.insertMany([
+    { transaction_id: 101, customer_id: 1, amount: 5000, type: "Credit" },
+    { transaction_id: 102, customer_id: 2, amount: 2000, type: "Debit" }
+]);
+
+db.Customer.find({ first_name: /^S/ }, { first_name: 1, last_name: 1 });
+
+db.Customer.find({ branch: "Pune", opened_date: "2020-01-01" });
+
+db.Customer.find({ account_type: "Saving" });
+
+db.Transaction.count({ type: "Loan", branch: "Pune" }); -->

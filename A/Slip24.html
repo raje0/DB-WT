@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Types Examples</title>
+</head>
+<body>
+    <h1>Input Types Examples</h1>
+    <form>
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date"><br><br>
+        
+        <label for="datetime">Datetime:</label>
+        <input type="datetime" id="datetime" name="datetime"><br><br>
+        
+        <label for="datetime-local">Datetime-local:</label>
+        <input type="datetime-local" id="datetime-local" name="datetime-local"><br><br>
+        
+        <label for="month">Month:</label>
+        <input type="month" id="month" name="month"><br><br>
+        
+        <label for="time">Time:</label>
+        <input type="time" id="time" name="time"><br><br>
+        
+        <label for="week">Week:</label>
+        <input type="week" id="week" name="week"><br><br>
+        
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- // Create Students
+CREATE (:Student {StudentID: 1, Name: "John"});
+CREATE (:Student {StudentID: 2, Name: "Jane"});
+
+// Create Books
+CREATE (:Book {BookID: 101, Type: "text", Title: "Data Structures"});
+CREATE (:Book {BookID: 102, Type: "reference", Title: "Algorithms"});
+CREATE (:Book {BookID: 103, Type: "bibliography", Title: "Database Systems"});
+
+// Create Relationships
+MATCH (s:Student {Name: "John"}), (b:Book {Title: "Data Structures"})
+CREATE (s)-[:BUYS]->(b);
+
+MATCH (s:Student {Name: "Jane"}), (b:Book {Title: "Algorithms"})
+CREATE (s)-[:BUYS]->(b);
+
+MATCH (s:Student {Name: "John"}), (b:Book {Title: "Algorithms"})
+CREATE (s)-[:RECOMMENDS]->(b);
+
+MATCH (s:Student {Name: "Jane"}), (b:Book {Title: "Data Structures"})
+CREATE (s)-[:RATES {Stars: 5}]->(b);
+
+// List the books of type "text"
+MATCH (b:Book {Type: "text"})
+RETURN b.Title;
+
+// List the names of students who bought text and reference books
+MATCH (s:Student)-[:BUYS]->(b:Book)
+WHERE b.Type IN ["text", "reference"]
+RETURN s.Name;
+
+// List the most recommended book type
+MATCH (s:Student)-[:RECOMMENDS]->(b:Book)
+RETURN b.Type, COUNT(b.Type) AS RecommendationCount
+ORDER BY RecommendationCount DESC
+LIMIT 1;
+
+// List the students who buy more than one type of book
+MATCH (s:Student)-[:BUYS]->(b:Book)
+WITH s, COLLECT(DISTINCT b.Type) AS Types
+WHERE SIZE(Types) > 1
+RETURN s.Name, Types;
+ -->

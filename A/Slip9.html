@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slip 9 - Student Registration</title>
+</head>
+<body>
+    <h1>Student Registration Form</h1>
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob"><br><br>
+        <label for="search">Search:</label>
+        <input type="search" id="search" name="search"><br><br>
+        <button type="submit">Register</button>
+    </form>
+</body>
+</html>
+
+
+
+
+<!-- 
+db.Customer.insertMany([
+    { customer_id: 1, name: "Dinesh", city: "Pimpri", loan_type: "Home", loan_amount: 150000 },
+    { customer_id: 2, name: "David", city: "Pimpri", loan_type: "Personal", loan_amount: 120000 }
+]);
+
+
+db.Customer.find({ name: /^D/ }, { name: 1 });
+
+db.Customer.find({ city: "Pimpri" }).sort({ name: -1 });
+
+db.Customer.find().sort({ loan_amount: -1 }).limit(1);
+
+db.Customer.updateOne({ name: "Mr. Patil", loan_amount: { $gt: 100000 } }, { $set: { address: "Updated Address" } }); -->

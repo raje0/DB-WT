@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slip 10 - Transition Effects</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            transition: all 1s;
+        }
+        .box:hover {
+            background-color: green;
+            transform: scale(1.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>
+
+
+<!-- db.Product.insertMany([
+    { product_id: 1, name: "Laptop", warranty: "1 year", brand: "Dell", rating: 5 },
+    { product_id: 2, name: "Mobile", warranty: "6 months", brand: "Samsung", rating: 4 }
+]);
+
+db.Customer.insertMany([
+    { customer_id: 1, name: "John", city: "Pune", bill_amount: 60000, purchase_date: "2023-08-15" },
+    { customer_id: 2, name: "Jane", city: "Mumbai", bill_amount: 45000, purchase_date: "2023-08-15" }
+]);
+
+
+db.Product.find({ warranty: "1 year" }, { name: 1 });
+
+db.Customer.find({ purchase_date: "2023-08-15" }, { name: 1 });
+
+db.Product.find().sort({ rating: -1 }).limit(1);
+
+db.Customer.find({ city: "Pune", bill_amount: { $gt: 50000 } }, { name: 1 }); -->

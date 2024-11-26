@@ -1,0 +1,52 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Box Model</title>
+  <link rel="stylesheet" href="slip17.css">
+</head>
+<body>
+  <div class="outer">
+    <div class="middle">
+        <div class="inn">M.Sc(Computer Sci)</div>
+        <div class="inn">Academic Year 2023-24</div>
+    </div>
+  </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+<!-- // Create customers
+CREATE (customer1:Customer {name: "John", purchase_date: "26/01/2023"});
+CREATE (customer2:Customer {name: "Alice", purchase_date: "15/02/2023"});
+CREATE (customer3:Customer {name: "Bob", purchase_date: "26/01/2023"});
+
+// Create laptops
+CREATE (laptop1:Laptop {brand: "DELL", model: "Inspiron", characteristics: "8GB RAM, 512GB SSD"});
+CREATE (laptop2:Laptop {brand: "HP", model: "Pavilion", characteristics: "16GB RAM, 1TB HDD"});
+CREATE (laptop3:Laptop {brand: "Apple", model: "MacBook Air", characteristics: "8GB RAM, 256GB SSD"});
+
+// Create relationships
+MERGE (customer1)-[:PURCHASED]->(laptop1);
+MERGE (customer2)-[:PURCHASED]->(laptop2);
+MERGE (customer3)-[:PURCHASED]->(laptop3);
+MERGE (customer1)-[:RECOMMENDED]->(laptop1);
+MERGE (customer2)-[:RATED {rating: 5}]->(laptop2);
+MERGE (customer3)-[:RATED {rating: 4}]->(laptop1);
+
+MATCH (a:Author)-[:WRITES]->(b:Book {genre: "Comics"}) RETURN a.name;
+
+MATCH (:Publisher {name: "Sage"})-[:PUBLISHES]->(b:Book)<-[:RATES]-(r:Reader) RETURN b.title, COUNT(r);
+
+MATCH (p:Publisher) WHERE p.name STARTS WITH "N" RETURN p.name;
+
+MATCH (r:Reader)-[rating:RATES]->(b:Book) WHERE rating.value >= 3 RETURN r.name, b.title; -->

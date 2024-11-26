@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slip 5 Table</title>
+    <style>
+        table {
+            border: 1px solid black;
+            border-radius: 5px;
+            width: 50%;
+            margin: auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">List of Persons</h1>
+    <table>
+        <tr>
+            <th>Sr No</th>
+            <th>Person Name</th>
+            <th>Age</th>
+            <th>Country</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>John Doe</td>
+            <td>30</td>
+            <td>USA</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Jane Smith</td>
+            <td>25</td>
+            <td>UK</td>
+        </tr>
+    </table>
+</body>
+</html>
+
+
+<!-- db.Project.insertMany([
+    { project_id: 1, name: "Project A", type: "Research", duration: 4 },
+    { project_id: 2, name: "Project B", type: "Development", duration: 2 }
+]);
+
+db.Employee.insertMany([
+    { emp_id: 101, name: "Mr. Patil", project_id: 1 },
+    { emp_id: 102, name: "Ms. Sharma", project_id: 2 }
+]);
+
+db.Project.find({ type: "Research" }, { name: 1 });
+
+db.Project.find({ duration: { $gt: 3 } });
+
+db.Employee.count({ project_id: 1 });
+
+db.Employee.aggregate([
+    { $match: { name: "Mr. Patil" } },
+    { $lookup: { from: "Project", localField: "project_id", foreignField: "project_id", as: "projectDetails" } },
+    { $project: { "projectDetails.name": 1 } }
+]);
+ -->
